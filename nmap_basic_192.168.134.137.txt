@@ -1,0 +1,10 @@
+# Nmap 7.95 scan initiated Mon Sep 22 12:11:15 2025 as: /usr/lib/nmap/nmap --privileged -sV -p 1-1000 -oN nmap_basic_192.168.134.137.txt 192.168.134.137
+Nmap scan report for 192.168.134.137
+Host is up (0.0000060s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 10.0p2 Debian 5 (protocol 2.0)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep 22 12:11:15 2025 -- 1 IP address (1 host up) scanned in 0.46 seconds

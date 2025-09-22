@@ -1,0 +1,111 @@
+Scan for 192.168.134.137 - Mon, 22 Sep 2025 12:22:50 -0400
+# Nmap 7.95 scan initiated Mon Sep 22 12:22:50 2025 as: /usr/lib/nmap/nmap --privileged -sV -p1-1000 -oN - 192.168.134.137
+Nmap scan report for 192.168.134.137
+Host is up (0.0000040s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 10.0p2 Debian 5 (protocol 2.0)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep 22 12:22:50 2025 -- 1 IP address (1 host up) scanned in 0.39 seconds
+
+--- ssh enum ---
+
+# Nmap 7.95 scan initiated Mon Sep 22 12:22:50 2025 as: /usr/lib/nmap/nmap --privileged -sV --script=banner,ssh2-enum-algos,ssh-hostkey,vuln -p22 -oN - 192.168.134.137
+Nmap scan report for 192.168.134.137
+Host is up (0.00026s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 10.0p2 Debian 5 (protocol 2.0)
+| ssh2-enum-algos: 
+|   kex_algorithms: (10)
+|       mlkem768x25519-sha256
+|       sntrup761x25519-sha512
+|       sntrup761x25519-sha512@openssh.com
+|       curve25519-sha256
+|       curve25519-sha256@libssh.org
+|       ecdh-sha2-nistp256
+|       ecdh-sha2-nistp384
+|       ecdh-sha2-nistp521
+|       ext-info-s
+|       kex-strict-s-v00@openssh.com
+|   server_host_key_algorithms: (4)
+|       rsa-sha2-512
+|       rsa-sha2-256
+|       ecdsa-sha2-nistp256
+|       ssh-ed25519
+|   encryption_algorithms: (6)
+|       chacha20-poly1305@openssh.com
+|       aes128-gcm@openssh.com
+|       aes256-gcm@openssh.com
+|       aes128-ctr
+|       aes192-ctr
+|       aes256-ctr
+|   mac_algorithms: (10)
+|       umac-64-etm@openssh.com
+|       umac-128-etm@openssh.com
+|       hmac-sha2-256-etm@openssh.com
+|       hmac-sha2-512-etm@openssh.com
+|       hmac-sha1-etm@openssh.com
+|       umac-64@openssh.com
+|       umac-128@openssh.com
+|       hmac-sha2-256
+|       hmac-sha2-512
+|       hmac-sha1
+|   compression_algorithms: (2)
+|       none
+|_      zlib@openssh.com
+|_banner: SSH-2.0-OpenSSH_10.0p2 Debian-5
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep 22 12:23:04 2025 -- 1 IP address (1 host up) scanned in 13.84 seconds
+
+--- banner ---
+
+SSH-2.0-OpenSSH_10.0p2 Debian-5
+
+--- ssh -v snippet ---
+
+debug1: OpenSSH_10.0p2 Debian-5, OpenSSL 3.5.0 8 Apr 2025
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf
+debug1: /etc/ssh/ssh_config line 21: Applying options for *
+debug1: Connecting to 192.168.134.137 [192.168.134.137] port 22.
+debug1: Connection established.
+debug1: identity file /home/kali/.ssh/id_rsa type -1
+debug1: identity file /home/kali/.ssh/id_rsa-cert type -1
+debug1: identity file /home/kali/.ssh/id_ecdsa type -1
+debug1: identity file /home/kali/.ssh/id_ecdsa-cert type -1
+debug1: identity file /home/kali/.ssh/id_ecdsa_sk type -1
+debug1: identity file /home/kali/.ssh/id_ecdsa_sk-cert type -1
+debug1: identity file /home/kali/.ssh/id_ed25519 type -1
+debug1: identity file /home/kali/.ssh/id_ed25519-cert type -1
+debug1: identity file /home/kali/.ssh/id_ed25519_sk type -1
+debug1: identity file /home/kali/.ssh/id_ed25519_sk-cert type -1
+debug1: identity file /home/kali/.ssh/id_xmss type -1
+debug1: identity file /home/kali/.ssh/id_xmss-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_10.0p2 Debian-5
+debug1: Remote protocol version 2.0, remote software version OpenSSH_10.0p2 Debian-5
+debug1: compat_banner: match: OpenSSH_10.0p2 Debian-5 pat OpenSSH* compat 0x04000000
+debug1: Authenticating to 192.168.134.137:22 as 'someuser'
+debug1: load_hostkeys: fopen /home/kali/.ssh/known_hosts2: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts2: No such file or directory
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: algorithm: mlkem768x25519-sha256
+debug1: kex: host key algorithm: ssh-ed25519
+debug1: kex: server->client cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: kex: client->server cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: SSH2_MSG_KEX_ECDH_REPLY received
+debug1: Server host key: ssh-ed25519 SHA256:zmWApSgFLIEkMBR+KxHgqSdKBjWqwe3SNYvrdAPp96w
+debug1: load_hostkeys: fopen /home/kali/.ssh/known_hosts2: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts2: No such file or directory
+debug1: hostkeys_find_by_key_hostfile: hostkeys file /home/kali/.ssh/known_hosts2 does not exist
+debug1: hostkeys_find_by_key_hostfile: hostkeys file /etc/ssh/ssh_known_hosts does not exist
+debug1: hostkeys_find_by_key_hostfile: hostkeys file /etc/ssh/ssh_known_hosts2 does not exist
+7060c3d41e2b995114daf5a52bdd8c00933ad78244ef635b2c923bf06c3e9c76  /home/kali/scan_results/192.168.134.137/ssh_scan_192.168.134.137_2025-09-22_1222.txt
